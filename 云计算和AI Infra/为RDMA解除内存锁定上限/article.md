@@ -83,6 +83,8 @@ LimitMEMLOCK=infinity
 
 至此，Pod 中的内存锁定上限应该已被解除，我们可以再次运行 RDMA 带宽测试命令，分别能够在主机和从机上看到以下输出。
 
+![rdma_write_bw](img/rdma_write_bw.png)
+
 **Master:**
 
 ```
@@ -145,6 +147,8 @@ unlimited
 
 可以看到限制已经解除，且 RDMA 已经可以在 Pod 间进行较大数据量的通信。
 
+![rdma_read_bw](img/rdma_read_bw.png)
+
 ## NOTES
 
 这是针对单个节点的操作，如果有大量需要这样配置的节点，那么最好使用脚本等方法来自动化完成，而不是手动配置。
@@ -184,6 +188,8 @@ Failed to create MR
 ```
 
 RDMA 进行带宽测试时，小数据量（如 1024 字节）传输正常，但 1M 及以上数据量传输失败，具体的报错信息与上面类似，详见 [Issue #339](https://github.com/raids-lab/crater/issues/339)。
+
+![大数据量时rdma_write_bw失败](img/大数据量时rdma_write_bw失败.png)
 
 直接使用 `ulimit -l` 查看限制，得到的是 64KB，即系统默认的内存锁定上限。
 
