@@ -66,7 +66,7 @@ crater-cli-shared/
 这类信息如果散落在每个领域 skill 里，会重复、难维护，也容易不一致。更好的方式是让所有领域 skill 在开头明确依赖 shared skill：
 
 ```md
-**CRITICAL — 开始前 MUST 先读取 `crater-cli-shared`（可能路径：[`../crater-cli-shared/SKILL.md`](../crater-cli-shared/SKILL.md)）。**
+**CRITICAL — 开始前 MUST 先读取 `crater-cli-shared`（可能路径：`../crater-cli-shared/SKILL.md`）。**
 ```
 
 这里同时提供 skill name 和可能路径，是为了兼容不同 AI 工具。有些工具能解析相对路径，有些工具只能根据名称理解要找的 skill。
